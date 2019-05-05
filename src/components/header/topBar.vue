@@ -1,7 +1,7 @@
 <template>
     <el-row class="m-header-topbar m-header">
         <el-col :span="10">
-            <!-- <geo /> -->
+             <geo /> 
         </el-col>
         <el-col :span="14">
             <m-nav />
