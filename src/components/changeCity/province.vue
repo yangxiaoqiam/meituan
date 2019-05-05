@@ -1,6 +1,6 @@
 <template>
     <div>
-      <span class="name">按省份选择：</span> 
+      <span class="name">按省份选择:</span> 
       <m-select :list='provinceList' :value="province" title="省份" :showWrapperActive="provinceActive"  @change_active="changeProvinceActive"/>
       <m-select :list='cityList' :value="city" title="城市" :showWrapperActive="cityActive"  @change_active="changeCityActive"/>
       <span>直接搜索</span>
