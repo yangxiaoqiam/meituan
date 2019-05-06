@@ -37,24 +37,43 @@ export default {
         }
       ],
       productList: [{
-        "image": "p1.meituan.net/travel/d20079b903b559fe8ea5a5eb8fb99a12483467.png@220w_125h_1e_1c",
-        "title": '火锅老店',
+
+        "image": "http://p0.meituan.net/xxxxc",
+
+        "title": "火鸡老店",
+
         "type": "food",
-        "score": "2.5",
+
+        "score": "4.1",
+
         "commentNum": 0,
+
         "comment": [{
-          "username": 'ccc',
+
+          "username": "xxxx",
+
           "evalaute": "好吃"
-        }]
-      }, {
-        "image": "p1.meituan.net/travel/d20079b903b559fe8ea5a5eb8fb99a12483467.png@220w_125h_1e_1c",
-        "title": '奶茶店',
-        "type": "tea",
-        "score": "5",
-        "commentNum": 0,
-        "comment": [{
-          "username": 'ccc',
-          "evalaute": "好吃"
+
+        }],
+
+        "tab": ["火锅", "沙河"],
+
+        "address": "昌平区小汤山尚信村沿温榆河畔北岸向西3．5公里",
+
+        "avgPrice": 64,
+
+        "dealItems": [{
+
+          "title": "火鸡宴，建议10-14人使用",
+
+          "price": 909,
+
+          "counterPrice": 1150,
+
+          "saleNum": 0,
+
+          "priceType": "元"
+
         }]
       }]
     };
