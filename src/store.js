@@ -4,28 +4,26 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  position: {},
-  userName: ''
+    position: "上海",
+    userName: ''
 }
 
 const mutations = {
-  setPosition (state, val) {
-    state.position = val
-  },
-  setUserName (state, val) {
-    state.userName = val
-  }
+    setPosition(state, val) {
+        state.position = val
+    },
+
 }
 
 const actions = {
-  setPosition ({ commit }, val) {
-    // 异步请求后端获取当前位置数据
-    commit('setPosition', val)
-  }
+    setPosition({ commit }, val) {
+        // 异步请求后端获取当前位置数据
+        commit('setPosition', val)
+    }
 }
 
 export default new Vuex.Store({
-  state,
-  mutations,
-  actions
+    state,
+    mutations,
+    actions
 })
