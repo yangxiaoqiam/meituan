@@ -4,19 +4,20 @@
       <dt>分类</dt>
       <dt>全部</dt>
       <dd v-for="(item) in classicList" :key="item.type">
-        <m-select :name="item.title" :list="item.sub_list"/>
+        <m-select :name="item.title" :list="item.sub_list" />
       </dd>
     </dl>
     <dl class="classic">
       <dt>区域</dt>
       <dt>全部</dt>
       <dd v-for="(item) in areaList" :key="item.type">
-        <m-select :name="item.title" :list="item.sub_list"/>
+        <m-select :name="item.title" :list="item.sub_list" />
       </dd>
     </dl>
   </div>
 </template>
 <script>
+import api from '@/api/index'
 import MSelect from "./select.vue";
 export default {
   data() {
@@ -78,6 +79,9 @@ export default {
         }
       ]
     };
+  },
+  created: {
+
   },
   components: {
     MSelect
