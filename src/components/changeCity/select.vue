@@ -5,7 +5,7 @@
       <i class="el-icon-caret-bottom"></i>
       <div :class="{'mt-content':true,'active':showWrapperActive}">
         <h2>{{title}}</h2>
-        <div class="wrapper">
+        <div :class="['wrapper',className]">
           <div class="col" v-for="(listData,index) in renderList" :key="index">
             <span :class="{'mt-item':true,'active':item.name==value}" v-for="(item,index) in listData" :key="index" @click="changeValue(item)">{{item.name}}</span>
           </div>
@@ -26,7 +26,8 @@ export default {
     'value',
     'title',
     'showWrapperActive',
-    'disabled'
+    'disabled',
+    'className'
   ],
   computed: {
 

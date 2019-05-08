@@ -9,7 +9,7 @@
     <dl class="m-categroy-section" v-for="(item,index) in cityGroup" :key="index" :id="'city-'+index">
       <dt>{{index}}</dt>
       <dd>
-        <span v-for="city in item" :key="city.id" @click="changeCity(city)">{{city.name}}</span>
+        <span v-for="city in item" :key="city.id" @click="changeCity(item)">{{city.name}}</span>
       </dd>
     </dl>
   </div>
@@ -41,7 +41,6 @@ export default {
   methods: {
     changeCity(item) {
       this.$store.dispatch('setPosition', item);
-      this.$router.push({ name: 'index' })
     }
   }
 };

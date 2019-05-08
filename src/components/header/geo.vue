@@ -2,7 +2,8 @@
   <div class="m-geo">
     <div class="position">
       <i class="el-icon-location" />
-      <!-- {{$store.state.position.name}} -->{{position}}
+      {{$store.state.position.name}}
+      <!--{{position.name}} -->
       <router-link class="changeCity" :to="{name: 'changeCity'}">切换城市</router-link>
       [
       <a href="#" v-for="(item, index) in nearCity" :key="index"> {{item.name}} </a>
@@ -27,23 +28,23 @@ export default {
   },
   watch: {
 
-    // "$store.state.position": function () {
-    //   this.nearCity = this.$store.state.position.nearCity;
-    // }
+    "$store.state.position": function () {
+      this.nearCity = this.$store.state.position.nearCity;
+    }
   },
-  //   created() {
+  created() {
 
-  //     api.getCurPosition().then((res) => {
-  //       this.$store.dispatch('setPosition', '北京1');
-  //       this.nearCity = res.data.data.nearCity;
+    api.getCurPosition().then((res) => {
+      this.$store.dispatch('setPosition', res.data.data);
+      this.nearCity = res.data.data.nearCity;
 
-  //     })
-  //   }
-  computed: {
-    ...mapState({
-      position: state => state.position
-    }),
+    })
   }
+  // computed: {
+  //   ...mapState({
+  //     position: state => state.position
+  //   }),
+  // }
 }
 </script>
 

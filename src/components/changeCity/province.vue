@@ -1,8 +1,8 @@
 <template>
   <div>
     <span class="name">按省份选择:</span>
-    <m-select :list='provinceList' :value="province" title="省份" :showWrapperActive="provinceActive" @change_active="changeProvinceActive" @change="changeProvince" />
-    <m-select :list='cityList' :value="city" title="城市" :showWrapperActive="cityActive" @change_active="changeCityActive" :disabled="cityDisabled" @change="changeCity" />
+    <m-select :list='provinceList' :value="province" title="省份" :showWrapperActive="provinceActive" @change_active="changeProvinceActive" @change="changeProvince" className="province" />
+    <m-select :list='cityList' :value="city" title="城市" :showWrapperActive="cityActive" @change_active="changeCityActive" :disabled="cityDisabled" @change="changeCity" className="city" />
     <span>直接搜索</span>
     <el-select v-model="searchWord" filterable remote reserve-keyword placeholder="请输入关键词" :loading="loading" :remote-method="remoteMethod">
       <el-option v-for="item in searchList" :key="item" :label="item" :value="item"></el-option>
@@ -10,6 +10,7 @@
   </div>
 </template>
 <script>
+
 import api from "@/api/index.js";
 import MSelect from '@/components/changeCity/select'
 export default {
@@ -65,6 +66,8 @@ export default {
     },
     changeCity(item) {
       this.city = item.name;
+      this.$store.dispatch('setPosition', item);
+      this.$router.push({ name: 'index' })
     },
     remoteMethod(val) {
 
